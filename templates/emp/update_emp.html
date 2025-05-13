@@ -95,7 +95,7 @@
                 <div class="mb-3">
                     <label for="department" class="form-label">Department</label>
                     <select class="form-control" id="department" name="emp_department" required>
-                        <option value="">Select Department</option>
+                        <option value="{{emp.department}}">Select Department</option>
                         <option value="CSE" {% if emp.department == 'CSE' %}selected{% endif %}>CSE</option>
                         <option value="IT" {% if emp.department == 'IT' %}selected{% endif %}>IT</option>
                         <option value="MBA" {% if emp.department == 'MBA' %}selected{% endif %}>MBA</option>

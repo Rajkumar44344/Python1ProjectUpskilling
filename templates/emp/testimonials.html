@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Employee Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2W8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .testimonials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .testimonial-card {
+        width: 300px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        background-color: #fff;
+      }
+
+      .testimonial-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-card h5 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      .testimonial-card p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .rating {
+        font-weight: bold;
+        color: #ff9900;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'emp/navbar.html' %}
+
+    <div class="container mt-4">
+      <h1 class="text-center mb-4">Testimonials Page</h1>
+      <div class="testimonials">
+        {% for t in testi %}
+        <div class="testimonial-card">
+          {% if t.piture %}
+          <img
+            src="/media/{{ t.piture }}"
+            class="testimonial-image"
+            alt="{{ t.name }}"
+          />
+          {% endif %}
+          <h5>{{ t.name }}</h5>
+          <p>{{ t.testimonial }}</p>
+          <p class="rating">⭐ {{ t.rating }}/5</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

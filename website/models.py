@@ -12,4 +12,4 @@ class Course(models.Model):
    cname=models.CharField(max_length=200)
    cdescription=models.CharField(max_length=200)
    cdurition=models.CharField(max_length=200)
-   cid=models.IntegerField(max_length=20)
+   cid=models.IntegerField(max_length=200)
